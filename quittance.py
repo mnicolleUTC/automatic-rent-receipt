@@ -3,7 +3,7 @@
 """
 Created on Mon Jun 27 21:11:51 2022
 Last modification : 30/12/2022
-Version number : 1.0.1
+Version number : 1.0.2
 @author: nicollemathieu
 """
 
@@ -40,6 +40,8 @@ def read_yaml(yaml_file):
     # Converting dict key month and tenant into list
     yaml_content['mois'] = yaml_content['mois'].split()
     yaml_content['date_paiement'] = yaml_content['date_paiement'].split()
+    # Adding room number based on file name
+    yaml_content["chambre"] = int(yaml_file[-5])
     # Comparing length of both list. If not equal sys.exit
     if len(yaml_content['mois']) != len(yaml_content['date_paiement']):
         print("Erreur dans fichier yaml.\nNombre valeur pour mois = {}\n"
@@ -164,7 +166,7 @@ def option_customized(output_dict, info):
     return output_dict
 
 
-def saving_path(yalm_dict, num_loc):
+def saving_path(yalm_dict):
     """
     Define name of rent receipt in pdf format.
     Format output file = YYYY_MM_locX_name_locataire.pdf where :
@@ -176,8 +178,6 @@ def saving_path(yalm_dict, num_loc):
     ----------
     yalm_dict : dict
         Dictionary containing yaml file content.
-    num_loc : int
-        Integer indicating room number of the tenant.
 
     Returns
     -------
@@ -190,6 +190,7 @@ def saving_path(yalm_dict, num_loc):
     month = dateparser.parse(yaml_dict["mois"][i]).strftime('%m')
     year = str(yalm_dict["annee"])
     name = "_".join(yaml_dict["locataire"].split()[1:])
+    num_loc = yaml_dict['chambre']
     name_file = "{0}_{1}_loc{2}_{3}.pdf".format(year, month, str(num_loc), name)
     namedir = "quittances_out"
     if not os.path.exists(namedir):
@@ -319,6 +320,30 @@ def de_elision(word):
     return word_prep
 
 
+def save_rent_receipt(input_dict):
+    """
+    Main function of this program. Based on an input dict with minimal
+    information create rent receipt in pdf format.
+
+    Parameters
+    ----------
+    input_dict : dict
+        Dictionary containing necessary information to establish rent receipt.
+
+    Returns
+    -------
+    None
+    """
+    for number, mois in enumerate(input_dict["mois"]):
+        input_dict['iteration'] = number
+        # Fetch information for latex variables
+        latex_dict = processing_yaml(yaml_dict)
+        # Definition of saving file and folder
+        output_path = saving_path(yaml_dict)
+        # Latex to PDF processing
+        latex_to_pdf(latex_dict, output_path)
+
+
 if __name__ == '__main__':
     # Configure of locale language
     locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
@@ -328,13 +353,5 @@ if __name__ == '__main__':
     os.environ["PATH"] = os.environ["PATH"]+":/Library/TeX/texbin"
     # Reading input data with yaml_format
     yaml_dict = read_yaml(file_yaml)
-    for number, mois in enumerate(yaml_dict["mois"]):
-        yaml_dict['iteration'] = number
-        # Fetch information for latex variables
-        latex_dict = processing_yaml(yaml_dict)
-        # Definition of saving file and folder
-        # int(file_yaml[-5]) indicate room number
-        output_path = saving_path(yaml_dict, int(file_yaml[-5]))
-        # Latex to PDF processing
-        latex_to_pdf(latex_dict, output_path)
-    
+    # Creating rent receipt based on yaml dictionary
+    save_rent_receipt(yaml_dict)
