@@ -1,0 +1,94 @@
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{tikz}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\definecolor{bluenicky}{RGB}{182,221,232}
+
+% LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, left=30mm, right=30mm, top=15mm, bottom=17mm}
+
+% No page numbers
+\pagenumbering{gobble}
+
+% Set paragraph break
+\setlength{\parskip}{1em}
+
+% PDF SETUP
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+
+% BALISE DEBUT DOCUMENT
+\begin{document}
+
+%Cadre Bleue Def du rectangle via point 1 gauche haut et point 2 droite bas
+\begin{tikzpicture}
+\begin{scope}
+\draw  (0,0) rectangle (14,-1.5) node[pos=.5,text width=10cm,align=center,
+		fill = bluenicky,draw = bluenicky, text = black, minimum width = 14cm, 
+    	minimum height = 1.5cm] {Location meublée à titre de résidence principale : 		\linebreak \textbf{Quittance de loyer}};
+\end{scope}
+\end{tikzpicture}
+
+%Titre du document
+\section*{\centering \huge Quittance de loyer du mois \VAR{mois}}
+
+%Denomination propriétaire
+\begin{flushleft} 
+\textit{\linebreak Nicolle, Mathieu \linebreak
+xxxx, YYYY \linebreak
+1 rue de Dupont \linebreak
+69001 LYON}
+\end{flushleft}
+
+%Denomination locataire + Date et lieu
+\begin{flushright}
+\textit{
+\VAR{locataire_entete} \linebreak
+1 Square Dupont \linebreak
+Appartement 1 4ème étage \linebreak
+60200 Compiègne} \linebreak
+\linebreak
+Fait à Lyon, le \VAR{date_signature}
+\end{flushright}
+
+%Titre Adresse de location souligné et gras + Adresse de location
+\begin{flushleft} 
+\underline{\textbf{Adresse de la location :}}\linebreak
+1 Square Dupont \linebreak
+Appartement 1 4ème étage \linebreak
+60200 Compiègne
+\end{flushleft}
+
+%Main paragraphe
+Nous soussignons Nicolle Mathieu et xxxx YYYY propriétaires du logement désigné ci- dessus, déclarons avoir reçu de \VAR{locataire_texte}, la somme de \VAR{montant_total_texte} euros / \VAR{montant_total} euros, au titre du paiement du loyer et des charges pour la période de location du \VAR{debut_periode} au \VAR{fin_periode} et lui en donne quittance, sous réserve de tous mes droits.
+
+%Détail du réglement + Organisation des signatures with tabto*
+\begin{flushleft} 
+\underline{\textbf{Détail du règlement :}}\linebreak
+\linebreak
+Loyer : \textbf{\VAR{montant_loyer}} euros \linebreak
+Provision pour charges : \textbf{\VAR{montant_charge}} euros \linebreak
+\textbf{Total : \VAR{montant_total} } euros\linebreak
+Date du paiement : le \VAR{date_paiement}\linebreak
+\linebreak
+Signature :\tabto*{2.5cm} NICOLLE Mathieu \tabto*{9.3cm}  YYYY xxxx
+\end{flushleft}
+
+%Insertion des signatures
+\includegraphics[height=2cm]{\VAR{signature_proprietaire1}}
+\includegraphics[height=2cm]{\VAR{signature_proprietaire2}}
+
+%Mention légales
+\begin{flushleft} 
+\footnotesize{Cette quittance annule tous les reçus qui auraient pu être établis précédemment en cas de paiement partiel du montant du présent terme. Elle est à conserver pendant trois ans par le locataire (loi n° 89-462 du 6 juillet 1989 : art. 7-1).}
+\end{flushleft}
+
+% BALISE FIN DOCUMENT
+\end{document}
