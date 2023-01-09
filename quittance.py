@@ -95,7 +95,7 @@ def processing_yaml(input_dict):
     # Adding month with customized elision
     output_dict["mois"] = de_elision(input_dict["mois"][i].capitalize())
     # Adding tenant name with civility
-    output_dict["locataire_entete"] = input_dict["locataire"]
+    output_dict["locataire_entete"] = ' '.join(input_dict["locataire"])
     output_dict["locataire_texte"] = convert_civility(input_dict["locataire"])
     # Adding signing date of rent receipt
     output_dict["date_signature"] = signed_day(input_dict["mois"][i],
@@ -111,7 +111,7 @@ def processing_yaml(input_dict):
                                                    lang='fr')
     # Adding date of the rent
     output_dict["debut_periode"], output_dict["fin_periode"] = first_last_day(
-                                                              yaml_dict)
+                                                              input_dict)
     # Adding absolute path to signature image
     cwd = os.getcwd()
     owner1 = 'image/Signature_proprietaire1.jpg'
@@ -166,7 +166,7 @@ def option_customized(output_dict, info):
     return output_dict
 
 
-def saving_path(yalm_dict):
+def saving_path(yaml_dict):
     """
     Define name of rent receipt in pdf format.
     Format output file = YYYY_MM_locX_name_locataire.pdf where :
@@ -176,7 +176,7 @@ def saving_path(yalm_dict):
 
     Parameters
     ----------
-    yalm_dict : dict
+    yaml_dict : dict
         Dictionary containing yaml file content.
 
     Returns
@@ -188,8 +188,8 @@ def saving_path(yalm_dict):
     i = yaml_dict['iteration']
     # Format output file = YYYY_MM_locX_name_locataire.pdf
     month = dateparser.parse(yaml_dict["mois"][i]).strftime('%m')
-    year = str(yalm_dict["annee"])
-    name = "_".join(yaml_dict["locataire"].split()[1:])
+    year = str(yaml_dict["annee"])
+    name = "_".join(yaml_dict["locataire"][1:])
     num_loc = yaml_dict['chambre']
     name_file = "{0}_{1}_loc{2}_{3}.pdf".format(year, month, str(num_loc), name)
     namedir = "quittances_out"
@@ -288,8 +288,8 @@ def convert_civility(person):
     full_civility : str
         Sentence containing civility and name without acronym.
     """
-    title = person.split()[0].lower()
-    name = " ".join(person.split()[1:])
+    title = person[0].lower()
+    name = " ".join(person[1:])
     dict_title = {
         "mr": "Monsieur",
         "mme": "Madame",
@@ -337,9 +337,9 @@ def save_rent_receipt(input_dict):
     for number, mois in enumerate(input_dict["mois"]):
         input_dict['iteration'] = number
         # Fetch information for latex variables
-        latex_dict = processing_yaml(yaml_dict)
+        latex_dict = processing_yaml(input_dict)
         # Definition of saving file and folder
-        output_path = saving_path(yaml_dict)
+        output_path = saving_path(input_dict)
         # Latex to PDF processing
         latex_to_pdf(latex_dict, output_path)
 

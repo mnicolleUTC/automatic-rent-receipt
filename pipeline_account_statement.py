@@ -48,7 +48,7 @@ def read_and_clean_csv_file(file):
     return df_rent
 
 
-def extract_info_from_row(rent_info):
+def extract_info_from_row(rent_info,dict_rent_info):
     """
     Extract from str containing information for rent receipt values which
     will be used in the global dictionary
@@ -56,15 +56,16 @@ def extract_info_from_row(rent_info):
     ----------
     rent_info : str
         String containing all information for rent receipt
+    dict_rent_info :dict
+        Dictionary containing base information on rent receipt.
+        Will be complete by this function with information contained in 
+        rent_info string variable
 
     Returns
     -------
     dict_rent_info :dict
-        Dictionary containing information which were extracted from the input
-        string
+        Dictionary containing all information about rent receipt
     """
-    # Initiate dictionary
-    dict_rent_info = dict()
     # Split row information with space
     split_text = rent_info.split()
     # Extract month for rent receipt and clean accent
@@ -75,7 +76,7 @@ def extract_info_from_row(rent_info):
     dict_rent_info["mois"] = [month]
     # Extract room number
     dict_rent_info['chambre'] = int(split_text[split_text.index("Chambre") + 1])
-    # Extract rental charge amount
+    # Extract rental charge amount and calculate rent without charge
     dict_rent_info['charge'] = int(split_text[split_text.index("Charge") + 1])
     # Extract tenant's civility
     if split_text[2] in ["Mr", "Mme", "Mlle"]:
@@ -97,7 +98,7 @@ def define_rent_receipt_dictionary(date, rent_info, amount):
     ----------
     date : pandas.timestamps
         Date of payment in datetime format
-    rent_info : str
+    rent_info: str
         String containing all information for rent receipt
     amount : str
         Amount for rent receipt
@@ -114,11 +115,9 @@ def define_rent_receipt_dictionary(date, rent_info, amount):
     rent_receipt['annee'] = date.year
     rent_receipt['date_paiement'] = [str(date.strftime("%d/%m/%Y"))]
     # Adding dictionary value based on rent amount
-    rent_receipt['montant'] = amount
+    rent_receipt['loyer'] = int(amount)
     # Adding dictionary values based on rent_info value
-    rent_info = extract_info_from_row(rent_info)
-    # Dictionary merge
-    rent_receipt = {**rent_receipt, **rent_info}
+    rent_receipt = extract_info_from_row(rent_info,rent_receipt)
     return rent_receipt
 
 
