@@ -7,6 +7,7 @@ Version number : 1.0.4
 @author: nicollemathieu
 """
 
+import os
 import sys
 import pandas as pd
 from quittance import save_rent_receipt
@@ -145,11 +146,11 @@ def extract_data_from_account_statement(file):
                             rows["transaction"], rows["income"])
         list_dict_rent_receipt.append(dict_rent_receipt)
     return list_dict_rent_receipt
-
+    
 
 if __name__ == '__main__':
     # Define csv file corresponding to a year account statement
-    csv_file = 'year2022.csv'
+    csv_file = [file for file in os.listdir() if file[-4:] == '.csv'][0]
     # Fetch data from csv file
     all_rent_receipt = extract_data_from_account_statement(csv_file)
     # Creating rent receipt for each dictionary in the list
