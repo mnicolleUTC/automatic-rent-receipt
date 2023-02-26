@@ -66,7 +66,7 @@ def latex_to_pdf(latex_info, file_path):
         Relative path for saving the output rent receipt
     """
     env = make_env(loader=FileSystemLoader('.'))
-    tpl = env.get_template('template.tex')
+    tpl = env.get_template('used_files/template.tex')
     latex_file = tpl.render(**latex_info)
     pdf = build_pdf(latex_file, builder=None)
     pdf.save_to(file_path)
@@ -92,8 +92,9 @@ def processing_yaml(input_dict):
     output_dict = dict()
     # Fetch current iteration
     i = input_dict['iteration']
-    # Adding month with customized elision
+    # Adding month with customized elision and year
     output_dict["mois"] = de_elision(input_dict["mois"][i].capitalize())
+    output_dict["annee"] = str(input_dict["annee"])
     # Adding tenant name with civility
     output_dict["locataire_entete"] = ' '.join(input_dict["locataire"])
     output_dict["locataire_texte"] = convert_civility(input_dict["locataire"])
@@ -114,8 +115,8 @@ def processing_yaml(input_dict):
                                                               input_dict)
     # Adding absolute path to signature image
     cwd = os.getcwd()
-    owner1 = 'image/Signature_proprietaire1.jpg'
-    owner2 = 'image/Signature_proprietaire2.jpg'
+    owner1 = 'used_files/image/Signature_proprietaire1.jpg'
+    owner2 = 'used_files/image/Signature_proprietaire2.jpg'
     output_dict["signature_proprietaire1"] = os.path.join(cwd, owner1)
     output_dict["signature_proprietaire2"] = os.path.join(cwd, owner2)
     # Customized option if specified in yaml file
@@ -192,7 +193,8 @@ def saving_path(yaml_dict):
     name = "_".join(yaml_dict["locataire"][1:])
     num_loc = yaml_dict['chambre']
     name_file = "{0}_{1}_loc{2}_{3}.pdf".format(year, month, str(num_loc), name)
-    namedir = "quittances_out"
+    current_dir = os.getcwd()
+    namedir = os.path.join(current_dir,"quittances_out")
     if not os.path.exists(namedir):
         os.makedirs(namedir)
     # Defining relative path of the output rent receipt
@@ -288,6 +290,7 @@ def convert_civility(person):
     full_civility : str
         Sentence containing civility and name without acronym.
     """
+    person = person.split()
     title = person[0].lower()
     name = " ".join(person[1:])
     dict_title = {
@@ -348,9 +351,7 @@ if __name__ == '__main__':
     # Configure of locale language
     locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
     # Choose yaml file to read
-    file_yaml = "quittance_chambre1.yml"
-    # Line to use builder latexmk
-    os.environ["PATH"] = os.environ["PATH"]+":/Library/TeX/texbin"
+    file_yaml = "used_files/quittance_chambre1.yml"
     # Reading input data with yaml_format
     yaml_dict = read_yaml(file_yaml)
     # Creating rent receipt based on yaml dictionary

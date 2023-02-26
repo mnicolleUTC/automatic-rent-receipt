@@ -1,5 +1,10 @@
 #Specific to the OCR_project
 quittances_out
+authentic_files
+.bash_history
+.python_history
+.texlive2017
+
 
 # Editors
 .vscode/
