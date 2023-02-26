@@ -1,7 +1,9 @@
 # Build docker 
-# docker build --no-cache -t mnicolle/latex_with_python .
+# docker build --no-cache -t mnicolle/rent_receipt .
 # Run docker for debug (-it)
-# docker run -it -v "$(pwd):/data" mnicolle/latex_with_python
+# docker run -it -v "$(pwd):/data" mnicolle/rent_receipt
+# See associated git repo at :
+# https://github.com/mnicolleUTC/automatic-rent-receipt.git
 
 FROM blang/latex:ctanbasic
 
@@ -34,9 +36,4 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 # Run python script and delete temp directory
-CMD bash select_files.sh && python3 quittance.py && rm -rf /data/used_files
-
-
-
-
-
+CMD bash select_files.sh && python3 pipeline_account_statement.py && rm -rf /data/used_files

@@ -28,7 +28,7 @@ def read_and_clean_csv_file(file):
         Dataframe containing only data relative to rent receipt.
     """
     # Convert csv file content into a dataframe
-    df = pd.read_csv(file, encoding='latin1', sep=";")
+    df = pd.read_csv(file, encoding='utf-8', sep=";")
     # Filtering space and uppercase from column names
     df.columns = df.columns.str.strip()
     df.columns = df.columns.str.lower()
@@ -150,7 +150,7 @@ def extract_data_from_account_statement(file):
 
 if __name__ == '__main__':
     # Define csv file corresponding to a year account statement
-    csv_file = [file for file in os.listdir() if file[-4:] == '.csv'][0]
+    csv_file = "used_files/input_file.csv"
     # Fetch data from csv file
     all_rent_receipt = extract_data_from_account_statement(csv_file)
     # Creating rent receipt for each dictionary in the list

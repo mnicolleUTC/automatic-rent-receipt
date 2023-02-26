@@ -290,7 +290,8 @@ def convert_civility(person):
     full_civility : str
         Sentence containing civility and name without acronym.
     """
-    person = person.split()
+    # Uncomment this line when using for single rent receipt
+    # person = person.split()
     title = person[0].lower()
     name = " ".join(person[1:])
     dict_title = {
