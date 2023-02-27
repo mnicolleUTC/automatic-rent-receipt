@@ -147,6 +147,31 @@ def extract_data_from_account_statement(file):
         list_dict_rent_receipt.append(dict_rent_receipt)
     return list_dict_rent_receipt
     
+def compute_sum_rent_receipt(file):
+    """
+    Return sum of rent receipt from csv file.
+    
+    Parameters
+    ----------
+    file : str
+        Relative path to the csv file containing account statement
+
+    Returns
+    -------
+    income : str
+        Str corresponding to income relative to rent receipt.
+    """
+    # Convert csv file content into a dataframe
+    df = pd.read_csv(file, encoding='utf-8', sep=";")
+    # Filtering space and uppercase from column names
+    df.columns = df.columns.str.strip()
+    df.columns = df.columns.str.lower()
+    # Filtering dataframe
+    df = df[df["transaction"].str.contains("^Loyer")]
+    df = df["income"].str.replace(',','.')
+    # Compute sum of rent receipt as income
+    income = str(df.astype("float").sum())
+    return income
 
 if __name__ == '__main__':
     # Define csv file corresponding to a year account statement
@@ -156,3 +181,7 @@ if __name__ == '__main__':
     # Creating rent receipt for each dictionary in the list
     for rr in all_rent_receipt:
         save_rent_receipt(rr)
+    # Log rent receipt sum
+    sum_rent_receipt = compute_sum_rent_receipt(csv_file)
+    print(f"\nInformation: Sum rent receipt is = {sum_rent_receipt} €\n")
+        
