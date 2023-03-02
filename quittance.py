@@ -374,8 +374,6 @@ def save_rent_receipt(input_dict):
 
 
 if __name__ == '__main__':
-    # Configure of locale language
-    #locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
     # Choose yaml file to read
     file_yaml = "used_files/quittance_chambre1.yml"
     # Reading input data with yaml_format
