@@ -10,6 +10,7 @@ Version number : 1.0.4
 import os
 import sys
 import pandas as pd
+from calendar import monthrange
 from quittance import save_rent_receipt
 
 
@@ -67,6 +68,15 @@ def extract_info_from_row(rent_info,dict_rent_info):
     dict_rent_info :dict
         Dictionary containing all information about rent receipt
     """
+    # Detect if row contains "PRORATA keyword"
+    if "PRORATA" in rent_info:
+        # Extract info for a customized rent_receipt
+        custom_info = rent_info[rent_info.find('(')+1:rent_info.find(')')]
+        # Filter rent_info
+        rent_info = rent_info[:rent_info.find('(')]
+        # Create "customized" key into dict_rent_info with appropriate content
+        dict_rent_info["customized"] = evaluate_prorata(custom_info,\
+                                                        dict_rent_info)
     # Split row information with space
     split_text = rent_info.split()
     # Extract month for rent receipt and clean accent
@@ -88,6 +98,53 @@ def extract_info_from_row(rent_info,dict_rent_info):
               f"line{rent_info}")
         sys.exit()
     return dict_rent_info
+
+
+def evaluate_prorata(prorata_info,base_info):
+    """ Prorata information extracted from dataframe row need to be processed 
+    by this function before adding dict key 'customized' to dict_rent_info
+    Input format = PRORATA XX/XX --> or PRORATA --> XX/XX
+    Output format = XX/XX/XX YY/YY/YY ZZZ with X beginning date, y end date and
+    Z amount in euros for this period.
+
+    Args:
+        prorata_info (str): 
+        String containing information about prorata period extracted from 
+        dataframe row.
+        base_info (dict):
+        Dictionnary containing info about year and rent amount. Correspond to 
+        object dict_rent_info that contains info sent to latex.
+    Returns:
+        prorate_value (str):
+        Information processed and ready to be add into dict_rent_info with key
+        'customized'
+    """
+    # Detect arrow position compare to prorata date
+    prorata_split = prorata_info.split()
+    arrow = "-->"
+    year_value = str(base_info['annee'])[-2:]
+    if not len(prorata_split)==3:
+        print("Error in csv file. Prorata rent do not respect format")
+        sys.exit()
+    if prorata_split.index(arrow) == 1:
+        # Case when arrow is before date. Means rent is from beginning of month 
+        # till the date
+        begin_date = '01/' + prorata_split[2][-2:] + '/' + year_value
+        end_date = prorata_split[2] + '/' + year_value
+    elif prorata_split.index(arrow) == 2:
+        # Case when arrow is after date. Means rent is from date till the end
+        # of month
+        number_last = monthrange(int(base_info['annee']),\
+                                int(prorata_split[1][-2:]))[1]
+        begin_date = prorata_split[1] + '/' + year_value
+        end_date = str(number_last)+'/'+prorata_split[1][-2:]+'/'+year_value
+    else: 
+        # Other case which will not be supported
+        print("Error in csv file. Prorata rent do not respect format")
+        sys.exit()
+    # Concatening info in one line 
+    prorata_value = " ".join([begin_date,end_date,str(base_info['loyer'])])
+    return prorata_value
 
 
 def define_rent_receipt_dictionary(date, rent_info, amount):
@@ -116,7 +173,7 @@ def define_rent_receipt_dictionary(date, rent_info, amount):
     rent_receipt['annee'] = date.year
     rent_receipt['date_paiement'] = [str(date.strftime("%d/%m/%Y"))]
     # Adding dictionary value based on rent amount
-    rent_receipt['loyer'] = int(amount)
+    rent_receipt['loyer'] = float(amount)
     # Adding dictionary values based on rent_info value
     rent_receipt = extract_info_from_row(rent_info,rent_receipt)
     return rent_receipt

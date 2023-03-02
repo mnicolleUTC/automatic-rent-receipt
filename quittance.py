@@ -92,6 +92,8 @@ def processing_yaml(input_dict):
     output_dict = dict()
     # Fetch current iteration
     i = input_dict['iteration']
+    # Adding room number
+    output_dict["chambre"] = str(input_dict["chambre"])
     # Adding month with customized elision and year
     output_dict["mois"] = de_elision(input_dict["mois"][i].capitalize())
     output_dict["annee"] = str(input_dict["annee"])
@@ -104,12 +106,13 @@ def processing_yaml(input_dict):
     # Adding payment date of the rent by the tenant
     output_dict["date_paiement"] = receipt_day(input_dict)  
     # Adding rent and rental charge amount
-    output_dict["montant_loyer"] = str(input_dict['loyer'] - 
-                                       input_dict['charge'])
-    output_dict["montant_charge"] = str(input_dict['charge'])
-    output_dict["montant_total"] = str(input_dict['loyer'])
+    # If no customized option we consider integer 
+    output_dict["montant_loyer"] = str(int(input_dict['loyer']) - 
+                                       int(input_dict['charge']))
+    output_dict["montant_charge"] = str(int(input_dict['charge']))
+    output_dict["montant_total"] = str(int(input_dict['loyer']))
     output_dict["montant_total_texte"] = num2words(input_dict['loyer'],
-                                                   lang='fr')
+                                                   lang='fr') + " euros"
     # Adding date of the rent
     output_dict["debut_periode"], output_dict["fin_periode"] = first_last_day(
                                                               input_dict)
@@ -121,7 +124,7 @@ def processing_yaml(input_dict):
     output_dict["signature_proprietaire2"] = os.path.join(cwd, owner2)
     # Customized option if specified in yaml file
     if "customized" in input_dict.keys():
-        output_dict = option_customized(output_dict, yaml_dict["customized"])
+        output_dict = option_customized(output_dict, input_dict["customized"])
     return output_dict
 
 
@@ -135,8 +138,7 @@ def option_customized(output_dict, info):
         Dictionary containing information for customized rent receipt without
         date customisation in case of a non full occupied month.
     info : str
-        String containing information about dates of the non full occupied
-        month.
+        String containing information about dates of non full occupied month.
 
     Returns
     -------
@@ -145,13 +147,16 @@ def option_customized(output_dict, info):
         date customisation in case of a non full occupied month.
     """
     begin, end, amount = info.split()
-    # Verifying format
+    # Computing ratio between rent and charges
+    number_of_days = int(end[:2])-int(begin[:2])+1
+    total_of_days = monthrange(int("20"+end[-2:]),int(end[3:5]))[1]
+    full_month_rent = int((total_of_days/number_of_days)*float(amount))
+    ratio_charges = int(output_dict["montant_charge"])/full_month_rent
+    charges = round(ratio_charges*float(amount),2)
+    loyer = round(float(amount)-charges,2)
+    # Verifying format of input date
     begin = dateparser.parse(begin, languages=['fr']).strftime("%d/%m/%Y")
     end = dateparser.parse(end, languages=['fr']).strftime("%d/%m/%Y")
-    # Computing corresponding charges
-    ratio = round(float(amount), 2)/int(output_dict["montant_total"])
-    loyer = round(ratio * int(output_dict["montant_loyer"]), 2)
-    charges = round(round(float(amount), 2) - loyer, 2)
     # Replacing output_dict values
     day_payed = dateparser.parse(output_dict["date_paiement"], languages=['fr'])
     day_signed = day_payed + datetime.timedelta(days=2)
@@ -160,10 +165,30 @@ def option_customized(output_dict, info):
     output_dict["montant_loyer"] = str(loyer).replace(".", ",")
     output_dict["montant_charge"] = str(charges).replace(".", ",")
     output_dict["montant_total"] = str(amount).replace(".", ",")
-    output_dict["montant_total_texte"] = num2words(amount, lang='fr')
+    # For amount in text format, determine before if it is a float
+    if ',' in output_dict["montant_total"]:
+        euros = output_dict["montant_total"].split(',')[0]
+        cents = output_dict["montant_total"].split(',')[1]
+        text = (num2words(euros,lang='fr') + " euros et " +
+               num2words(cents,lang='fr') + " centimes")
+        output_dict["montant_total_texte"] = text
+    else:
+        output_dict["montant_total_texte"] = (num2words(amount, lang='fr') +
+                                              " euros")
     # Adding date of the rent
-    output_dict["debut_periode"] = dateparser.parse(begin).strftime("%d %B %Y")
-    output_dict["fin_periode"] = dateparser.parse(end).strftime("%d %B %Y")
+    locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
+    begin_letter_list = dateparser.parse(begin,languages=['fr'])\
+        .strftime("%d %B %Y").split()
+    end_letter_list = dateparser.parse(end,languages=['fr'])\
+        .strftime("%d %B %Y").split()
+    # Capitalize month letter
+    month_letter = dateparser.parse(end,languages=['fr']).strftime("%B")
+    month_letter_cap = month_letter.capitalize()
+    begin_letter_list[1] = month_letter_cap
+    end_letter_list[1] = month_letter_cap
+    # Add to output dictionnary
+    output_dict["debut_periode"] = ' '.join(begin_letter_list)
+    output_dict["fin_periode"] = ' '.join(end_letter_list)
     return output_dict
 
 
@@ -350,7 +375,7 @@ def save_rent_receipt(input_dict):
 
 if __name__ == '__main__':
     # Configure of locale language
-    locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
+    #locale.setlocale(locale.LC_ALL, "fr_FR.UTF-8")
     # Choose yaml file to read
     file_yaml = "used_files/quittance_chambre1.yml"
     # Reading input data with yaml_format

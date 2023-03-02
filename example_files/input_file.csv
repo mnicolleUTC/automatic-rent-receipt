@@ -2,127 +2,127 @@ Date;Transaction; Expense ; Income ; BalanceCC
 01/01/2022;Etat des compte au 01_01_2022;;2703,86;2703,86
 04/01/2022;Loyer Janvier Mr xxx YYY Chambre 3 Charge 70;;310;3013,86
 04/01/2022;Loyer Janvier Mr xxxx YYYY Chambre 2 Charge 70;;320;3333,86
-05/01/2022;Prelevement TotaldirectEnergie Janvier 2022(Regulation charge);24,00 € ;;3309,86
-10/01/2022;Billet train (PARIS/LYN) Candice Travaux Janvier;40,60 € ;;3269,26
-11/01/2022;Echeance prêt (Janvier 2022);515,84 € ;;2753,42
-14/01/2022;Peage Aller Compiègne Travaux;35,80 € ;;2717,62
-15/01/2022;Essence Aller Compiègne Travaux;53,33 € ;;2664,29
-15/01/2022;Leroy Merlin Facture 023863 Planche + Lino + Rangement cuisine;164,83 € ;;2499,46
-18/01/2022;Leroy Merlin Facture 031834 DIVERS;28,29 € ;;2471,17
-19/01/2022;Prelevement SFR Janvier 2022;16,01 € ;;2455,16
-20/01/2022;Leroy Merlin Facture 068842 Peinture + Rebouche fuite;40,70 € ;;2414,46
-22/01/2022;Esence fonctionnement Compiègne;8,33 € ;;2406,13
-22/01/2022;Leroy Merlin Porte etiquette + Visserie;5,02 € ;;2401,11
-22/01/2022;Peage Compiègne Paris SANEF;3,60 € ;;2397,51
-23/01/2022;Peage Paris Lyon APRR;35,80 € ;;2361,71
-24/01/2022;Complément Caution xxxx Changement Chambre;;30;2391,71
-25/01/2022;Essence Retour Travaux Compiègne;51,96 € ;;2339,75
-26/01/2022;Envoi Courrier Recommandé avec AR (Répartiteur radiateur Société OCEA);5,75 € ;;2334
-26/01/2022;Loyer Janvier Mr xxxxx YYYYY Chambre 2 Charge 70 (Prorata à partir du 21/01);;109,98;2443,98
+05/01/2022;Prelevement TotaldirectEnergie Janvier 2022(Regulation charge);24,00 ÔøΩ ;;3309,86
+10/01/2022;Billet train (PARIS/LYN) Candice Travaux Janvier;40,60 ÔøΩ ;;3269,26
+11/01/2022;Echeance prÔøΩt (Janvier 2022);515,84 ÔøΩ ;;2753,42
+14/01/2022;Peage Aller CompiÔøΩgne Travaux;35,80 ÔøΩ ;;2717,62
+15/01/2022;Essence Aller CompiÔøΩgne Travaux;53,33 ÔøΩ ;;2664,29
+15/01/2022;Leroy Merlin Facture 023863 Planche + Lino + Rangement cuisine;164,83 ÔøΩ ;;2499,46
+18/01/2022;Leroy Merlin Facture 031834 DIVERS;28,29 ÔøΩ ;;2471,17
+19/01/2022;Prelevement SFR Janvier 2022;16,01 ÔøΩ ;;2455,16
+20/01/2022;Leroy Merlin Facture 068842 Peinture + Rebouche fuite;40,70 ÔøΩ ;;2414,46
+22/01/2022;Esence fonctionnement CompiÔøΩgne;8,33 ÔøΩ ;;2406,13
+22/01/2022;Leroy Merlin Porte etiquette + Visserie;5,02 ÔøΩ ;;2401,11
+22/01/2022;Peage CompiÔøΩgne Paris SANEF;3,60 ÔøΩ ;;2397,51
+23/01/2022;Peage Paris Lyon APRR;35,80 ÔøΩ ;;2361,71
+24/01/2022;ComplÔøΩment Caution xxxx Changement Chambre;;30;2391,71
+25/01/2022;Essence Retour Travaux CompiÔøΩgne;51,96 ÔøΩ ;;2339,75
+26/01/2022;Envoi Courrier RecommandÔøΩ avec AR (RÔøΩpartiteur radiateur SociÔøΩtÔøΩ OCEA);5,75 ÔøΩ ;;2334
+26/01/2022;Loyer Janvier Mr xxxxx YYYYY Chambre 2 Charge 70 (PRORATA 21/01 -->);;109,98;2443,98
 27/01/2022;Depot caution xxxxx (Chambre 2);;340;2783,98
-27/01/2022;Appel Charges 1er Trimestre 2022;647,51 € ;;2136,47
-01/02/2022;Loyer Février Mr xxxx YYYY Chambre 1 Charge 70;;350;2486,47
-02/02/2022;Loyer Février Mr xxx YYY Chambre 3 Charge 70;;310;2796,47
-04/02/2022;Loyer Février Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3136,47
-07/02/2022;Prelevement TotaldirectEnergie Février 2022;24,00 € ;;3112,47
-10/02/2022;Remboursement Caution Fabien Lefevbre;330,00 € ;;2782,47
-11/02/2022;Echeance prêt (Février 2022);515,84 € ;;2266,63
-21/02/2022;Prelevement SFR Février 2022;16,01 € ;;2250,62
+27/01/2022;Appel Charges 1er Trimestre 2022;647,51 ÔøΩ ;;2136,47
+01/02/2022;Loyer FÔøΩvrier Mr xxxx YYYY Chambre 1 Charge 70;;350;2486,47
+02/02/2022;Loyer FÔøΩvrier Mr xxx YYY Chambre 3 Charge 70;;310;2796,47
+04/02/2022;Loyer FÔøΩvrier Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3136,47
+07/02/2022;Prelevement TotaldirectEnergie FÔøΩvrier 2022;24,00 ÔøΩ ;;3112,47
+10/02/2022;Remboursement Caution Fabien Lefevbre;330,00 ÔøΩ ;;2782,47
+11/02/2022;Echeance prÔøΩt (FÔøΩvrier 2022);515,84 ÔøΩ ;;2266,63
+21/02/2022;Prelevement SFR FÔøΩvrier 2022;16,01 ÔøΩ ;;2250,62
 03/03/2022;Loyer Mars Mr xxx YYY Chambre 3 Charge 70;;310;2560,62
 03/03/2022;Loyer Mars Mr xxxxx YYYYY Chambre 2 Charge 70;;340;2900,62
 04/03/2022;Loyer Mars Mr xxxx YYYY Chambre 1 Charge 70;;350;3250,62
-07/03/2022;Prelevement TotaldirectEnergie Mars 2022;24,00 € ;;3226,62
-07/03/2022;Remboursement prorata annuel Passage à la mensualisation de l'assurance habitation;;11,37;3237,99
-11/03/2022;Echeance prêt (Mars 2022);515,84 € ;;2722,15
-13/03/2022;Remboursement double clés perdue xxxxx Lopez (retour attendue);7,00 € ;;2715,15
-21/03/2022;Prelevement SFR Mars 2022;16,01 € ;;2699,14
+07/03/2022;Prelevement TotaldirectEnergie Mars 2022;24,00 ÔøΩ ;;3226,62
+07/03/2022;Remboursement prorata annuel Passage ÔøΩ la mensualisation de l'assurance habitation;;11,37;3237,99
+11/03/2022;Echeance prÔøΩt (Mars 2022);515,84 ÔøΩ ;;2722,15
+13/03/2022;Remboursement double clÔøΩs perdue xxxxx Lopez (retour attendue);7,00 ÔøΩ ;;2715,15
+21/03/2022;Prelevement SFR Mars 2022;16,01 ÔøΩ ;;2699,14
 24/03/2022;Loyer Avril Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3039,14
 01/04/2022;Loyer Avril Mr xxxx YYYY Chambre 1 Charge 70;;350;3389,14
 01/04/2022;Solde compte notaire;;296,33;3685,47
-02/04/2022;Retour double clés;;7;3692,47
+02/04/2022;Retour double clÔøΩs;;7;3692,47
 05/04/2022;Loyer Avril Mr xxx YYY Chambre 3 Charge 70;;310;4002,47
-05/04/2022;Assurance propriétaire Non occupant;11,36 € ;;3991,11
-09/04/2022;Echeance prêt (Avril 2022);515,37 € ;;3475,74
-19/04/2022;Prelevement SFR Avril 2022;16,01 € ;;3459,73
+05/04/2022;Assurance propriÔøΩtaire Non occupant;11,36 ÔøΩ ;;3991,11
+09/04/2022;Echeance prÔøΩt (Avril 2022);515,37 ÔøΩ ;;3475,74
+19/04/2022;Prelevement SFR Avril 2022;16,01 ÔøΩ ;;3459,73
 19/04/2022;Regulation total energies en notre faveur;;126,18;3585,91
 29/04/2022;Loyer Mai Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3925,91
 02/05/2022;Loyer Mai Mr xxx YYY Chambre 3 Charge 70;;310;4235,91
-03/05/2022;Paiement frais de comptable ELM Conseil (année fiscale 2021);549,00 € ;;3686,91
+03/05/2022;Paiement frais de comptable ELM Conseil (annÔøΩe fiscale 2021);549,00 ÔøΩ ;;3686,91
 04/05/2022;Loyer Mai Mr xxxx YYYY Chambre 1 Charge 70;;350;4036,91
-05/05/2022;Prelevement TotaldirectEnergie Mai 2022;35,00 € ;;4001,91
-05/05/2022;Assurance propriétaire Non occupant;17,57 € ;;3984,34
-11/05/2022;Echeance prêt (Mai 2022);515,37 € ;;3468,97
-19/05/2022;Prelevement SFR Avril 2022;16,01 € ;;3452,96
+05/05/2022;Prelevement TotaldirectEnergie Mai 2022;35,00 ÔøΩ ;;4001,91
+05/05/2022;Assurance propriÔøΩtaire Non occupant;17,57 ÔøΩ ;;3984,34
+11/05/2022;Echeance prÔøΩt (Mai 2022);515,37 ÔøΩ ;;3468,97
+19/05/2022;Prelevement SFR Avril 2022;16,01 ÔøΩ ;;3452,96
 31/05/2022;Loyer Juin Mr xxxx YYYY Chambre 1 Charge 70;;350;3802,96
 02/06/2022;Loyer Juin Mr xxx YYY Chambre 3 Charge 70;;310;4112,96
-05/06/2022;Prelevement TotaldirectEnergie Juin 2022;35,00 € ;;4077,96
+05/06/2022;Prelevement TotaldirectEnergie Juin 2022;35,00 ÔøΩ ;;4077,96
 06/06/2022;Loyer Juin Mr xxxxx YYYYY Chambre 2 Charge 70;;340;4417,96
-07/06/2022;Assurance propriétaire Non occupant;11,67 € ;;4406,29
-11/06/2022;Echeance prêt (Juin 2022);515,37 € ;;3890,92
-20/06/2022;Prelevement SFR Juin 2022;16,01 € ;;3874,91
-23/06/2022;Appel charges 3ème trimestre 2022 (+ regulation 2ème trimestre avec regulation annuelle);779,42 € ;;3095,49
-23/06/2022;Adhésion Pass Copropriété Haut de France (Rénovation énergétique);150,00 € ;;2945,49
+07/06/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;4406,29
+11/06/2022;Echeance prÔøΩt (Juin 2022);515,37 ÔøΩ ;;3890,92
+20/06/2022;Prelevement SFR Juin 2022;16,01 ÔøΩ ;;3874,91
+23/06/2022;Appel charges 3ÔøΩme trimestre 2022 (+ regulation 2ÔøΩme trimestre avec regulation annuelle);779,42 ÔøΩ ;;3095,49
+23/06/2022;AdhÔøΩsion Pass CopropriÔøΩtÔøΩ Haut de France (RÔøΩnovation ÔøΩnergÔøΩtique);150,00 ÔøΩ ;;2945,49
 30/06/2022;Loyer Juillet Mr xxx YYY Chambre 3 Charge 70;;310;3255,49
 01/07/2022;Loyer Juillet Mr xxxx YYYY Chambre 1 Charge 70;;350;3605,49
-05/07/2022;Prelevement TotaldirectEnergie Juillet 2022;35,00 € ;;3570,49
+05/07/2022;Prelevement TotaldirectEnergie Juillet 2022;35,00 ÔøΩ ;;3570,49
 05/07/2022;Loyer Juillet Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3910,49
-06/07/2022;Assurance propriétaire Non occupant;11,67 € ;;3898,82
-11/06/2022;Echeance prêt (Juillet 2022);515,37 € ;;3383,45
-19/07/2022;Prelevement SFR Juillet 2022;38,00 € ;;3345,45
-25/07/2022;Billet train (LYN/CMP) Mathieu Aller Etat des lieux;47,20 € ;;3298,25
-01/08/2022;Loyer Août Mr xxx YYY Chambre 3 Charge 70;;310;3608,25
-02/08/2022;Loyer Août Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3948,25
-05/08/2022;Prelevement TotaldirectEnergie Aout 2022;35,00 € ;;3913,25
-05/08/2022;Assurance propriétaire Non occupant;11,67 € ;;3901,58
-11/08/2022;Echeance prêt (Aout 2022);515,37 € ;;3386,21
-16/08/2022;Loyer Août Mr xxxx YYYY Chambre 1 Charge 70;;350;3736,21
-18/08/2022;Remboursement location OuiCar pour évacuation Cave (Payé avec Carte N26, Rmbst CM);33,84 € ;;3702,37
-19/08/2022;Prelevement SFR Aout 2022;38,00 € ;;3664,37
-24/08/2022;Billet train (CMP/LYN) Mathieu Retour Etat des lieux;36,00 € ;;3628,37
+06/07/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;3898,82
+11/06/2022;Echeance prÔøΩt (Juillet 2022);515,37 ÔøΩ ;;3383,45
+19/07/2022;Prelevement SFR Juillet 2022;38,00 ÔøΩ ;;3345,45
+25/07/2022;Billet train (LYN/CMP) Mathieu Aller Etat des lieux;47,20 ÔøΩ ;;3298,25
+01/08/2022;Loyer AoÔøΩt Mr xxx YYY Chambre 3 Charge 70;;310;3608,25
+02/08/2022;Loyer AoÔøΩt Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3948,25
+05/08/2022;Prelevement TotaldirectEnergie Aout 2022;35,00 ÔøΩ ;;3913,25
+05/08/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;3901,58
+11/08/2022;Echeance prÔøΩt (Aout 2022);515,37 ÔøΩ ;;3386,21
+16/08/2022;Loyer AoÔøΩt Mr xxxx YYYY Chambre 1 Charge 70;;350;3736,21
+18/08/2022;Remboursement location OuiCar pour ÔøΩvacuation Cave (PayÔøΩ avec Carte N26, Rmbst CM);33,84 ÔøΩ ;;3702,37
+19/08/2022;Prelevement SFR Aout 2022;38,00 ÔøΩ ;;3664,37
+24/08/2022;Billet train (CMP/LYN) Mathieu Retour Etat des lieux;36,00 ÔøΩ ;;3628,37
 26/08/2022;Loyer Septembre Mr xxxxx YYYYY Chambre 2 Charge 70;;340;3968,37
-30/08/2022;Leroy Merlin Facture 049916 Divers;20,28 € ;;3948,09
+30/08/2022;Leroy Merlin Facture 049916 Divers;20,28 ÔøΩ ;;3948,09
 31/08/2022;Loyer Septembre Mr xxxx YYYY Chambre 1 Charge 70;;350;4298,09
-05/09/2022;Prelevement TotaldirectEnergie Septembre 2022;41,00 € ;;4257,09
-05/09/2022;Assurance propriétaire Non occupant;11,67 € ;;4245,42
-10/09/2022;Echeance prêt (Septembre 2022);515,37 € ;;3730,05
-13/09/2022;Billet train (CMP/PARIS) Mathieu payé avec compte N26 le 31/08;11,60 € ;;3718,45
-13/09/2022;Billet train (PARIS/CMP) Mathieu payé le 01/09 avec CM débite le 05/09;11,60 € ;;3706,85
-13/09/2022;Leroy Merlin Facture 468805 Divers;43,48 € ;;3663,37
-13/09/2022;Doublé clé Gaëtan Verrou Standers (paiement en liquide / Non prélevé de la caution);6,00 € ;;3657,37
-13/09/2022;Remboursement caution Gaëtan YYY;310,00 € ;;3347,37
-13/09/2022;Dépôt caution xxxxxx YYYYYY (Chambre 3);;350;3697,37
+05/09/2022;Prelevement TotaldirectEnergie Septembre 2022;41,00 ÔøΩ ;;4257,09
+05/09/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;4245,42
+10/09/2022;Echeance prÔøΩt (Septembre 2022);515,37 ÔøΩ ;;3730,05
+13/09/2022;Billet train (CMP/PARIS) Mathieu payÔøΩ avec compte N26 le 31/08;11,60 ÔøΩ ;;3718,45
+13/09/2022;Billet train (PARIS/CMP) Mathieu payÔøΩ le 01/09 avec CM dÔøΩbite le 05/09;11,60 ÔøΩ ;;3706,85
+13/09/2022;Leroy Merlin Facture 468805 Divers;43,48 ÔøΩ ;;3663,37
+13/09/2022;DoublÔøΩ clÔøΩ GaÔøΩtan Verrou Standers (paiement en liquide / Non prÔøΩlevÔøΩ de la caution);6,00 ÔøΩ ;;3657,37
+13/09/2022;Remboursement caution GaÔøΩtan YYY;310,00 ÔøΩ ;;3347,37
+13/09/2022;DÔøΩpÔøΩt caution xxxxxx YYYYYY (Chambre 3);;350;3697,37
 14/09/2022;Loyer Septembre Mr xxxxxx YYYYYY Chambre 3 Charge 70;;350;4047,37
-19/09/2022;Prelevement SFR Septembre 2022;38,00 € ;;4009,37
+19/09/2022;Prelevement SFR Septembre 2022;38,00 ÔøΩ ;;4009,37
 23/09/2022;Loyer Octobre Mr xxxxx YYYYY Chambre 2 Charge 70;;340;4349,37
-05/10/2022;Assurance propriétaire Non occupant;11,67 € ;;4337,7
-06/10/2022;Prelevement TotaldirectEnergie Octobre 2022;41,00 € ;;4296,7
+05/10/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;4337,7
+06/10/2022;Prelevement TotaldirectEnergie Octobre 2022;41,00 ÔøΩ ;;4296,7
 06/10/2022;Loyer Octobre Mr xxxx YYYY Chambre 1 Charge 70;;350;4646,7
-06/10/2022;Appel charges 4ème trimestre 2022 ;647,51 € ;;3999,19
+06/10/2022;Appel charges 4ÔøΩme trimestre 2022 ;647,51 ÔøΩ ;;3999,19
 09/10/2022;Loyer Octobre Mr xxxxxx YYYYYY Chambre 3 Charge 70;;350;4349,19
-11/10/2022;Echeance prêt (Octobre 2022);515,37 € ;;3833,82
-19/10/2022;SFR frais résiliation contrat;43,94 € ;;3789,88
-21/10/2022;SFR prorata temporis Mois d'octobre;8,00 € ;;3781,88
-25/10/2022;Régulation charges année 2022;153,81 € ;;3628,07
-25/10/2022;Prelevement SOSH Octobre 2022;17,49 € ;;3610,58
-27/10/2022;Taxe foncière 2022;1_568,00 € ;;2042,58
+11/10/2022;Echeance prÔøΩt (Octobre 2022);515,37 ÔøΩ ;;3833,82
+19/10/2022;SFR frais rÔøΩsiliation contrat;43,94 ÔøΩ ;;3789,88
+21/10/2022;SFR prorata temporis Mois d'octobre;8,00 ÔøΩ ;;3781,88
+25/10/2022;RÔøΩgulation charges annÔøΩe 2022;153,81 ÔøΩ ;;3628,07
+25/10/2022;Prelevement SOSH Octobre 2022;17,49 ÔøΩ ;;3610,58
+27/10/2022;Taxe fonciÔøΩre 2022;1_568,00 ÔøΩ ;;2042,58
 28/10/2022;Loyer Novembre Mr xxxxx YYYYY Chambre 2 Charge 70;;340;2382,58
-29/10/2022;Remboursement Machine à Laver Valberg Electrodepot;364,98 € ;;2017,6
-30/10/2022;Remboursement train PARIS - LYON changement locataire;58,00 € ;;1959,6
-30/10/2022;Remboursement train PARIS - COMPIEGNE changement locataire;23,20 € ;;1936,4
-30/10/2022;Paiement frais de comptable ELM Conseil (année fiscale 2022);549,00 € ;;1387,4
-07/11/2022;Assurance propriétaire Non occupant;11,67 € ;;1375,73
-07/11/2022;Prelevement TotaldirectEnergie Novembre 2022;50,00 € ;;1325,73
+29/10/2022;Remboursement Machine ÔøΩ Laver Valberg Electrodepot;364,98 ÔøΩ ;;2017,6
+30/10/2022;Remboursement train PARIS - LYON changement locataire;58,00 ÔøΩ ;;1959,6
+30/10/2022;Remboursement train PARIS - COMPIEGNE changement locataire;23,20 ÔøΩ ;;1936,4
+30/10/2022;Paiement frais de comptable ELM Conseil (annÔøΩe fiscale 2022);549,00 ÔøΩ ;;1387,4
+07/11/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;1375,73
+07/11/2022;Prelevement TotaldirectEnergie Novembre 2022;50,00 ÔøΩ ;;1325,73
 07/11/2022;Loyer Novembre Mr xxxxxx YYYYYY Chambre 3 Charge 70;;350;1675,73
-07/11/2022;Impression Bail Bureau Vallée;7,50 € ;;1668,23
+07/11/2022;Impression Bail Bureau VallÔøΩe;7,50 ÔøΩ ;;1668,23
 09/11/2022;Loyer Novembre Mlle xx YY Chambre 1 Charge 70;;360;2028,23
-10/11/2022;Restitution caution xxxx YYYY;214,43 € ;;1813,8
-11/11/2022;Echeance prêt (Novembre 2022);515,37 € ;;1298,43
-25/11/2022;Prelevement SOSH Novembre 2022;14,99 € ;;1283,44
-28/11/2022;Loyer Décembre Mr xxxxx YYYYY Chambre 2 Charge 70;;340;1623,44
-05/12/2022;Assurance propriétaire Non occupant;11,67 € ;;1611,77
-06/12/2022;Loyer Décembre Mlle xx YY Chambre 1 Charge 70;;360;1971,77
-07/12/2022;Prelevement TotaldirectEnergie Decembre 2022;50,00 € ;;1921,77
-10/11/2022;Echeance prêt (Decembre 2022);515,37 € ;;1406,4
-15/12/2022;Loyer Décembre Mr xxxxxx YYYYYY Chambre 3 Charge 70;;350;1756,4
-20/12/2022;Virement restitution SFR forfait télephonique secondaire;;2,13;1758,53
-22/12/2022;Appel charges 1er trimestre 2023;736,57 € ;;1021,96
+10/11/2022;Restitution caution xxxx YYYY;214,43 ÔøΩ ;;1813,8
+11/11/2022;Echeance prÔøΩt (Novembre 2022);515,37 ÔøΩ ;;1298,43
+25/11/2022;Prelevement SOSH Novembre 2022;14,99 ÔøΩ ;;1283,44
+28/11/2022;Loyer DÔøΩcembre Mr xxxxx YYYYY Chambre 2 Charge 70;;340;1623,44
+05/12/2022;Assurance propriÔøΩtaire Non occupant;11,67 ÔøΩ ;;1611,77
+06/12/2022;Loyer DÔøΩcembre Mlle xx YY Chambre 1 Charge 70;;360;1971,77
+07/12/2022;Prelevement TotaldirectEnergie Decembre 2022;50,00 ÔøΩ ;;1921,77
+10/11/2022;Echeance prÔøΩt (Decembre 2022);515,37 ÔøΩ ;;1406,4
+15/12/2022;Loyer DÔøΩcembre Mr xxxxxx YYYYYY Chambre 3 Charge 70;;350;1756,4
+20/12/2022;Virement restitution SFR forfait tÔøΩlephonique secondaire;;2,13;1758,53
+22/12/2022;Appel charges 1er trimestre 2023;736,57 ÔøΩ ;;1021,96

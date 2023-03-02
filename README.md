@@ -26,6 +26,7 @@ Here are some tips for creating and saving your CSV file:<br>
 3) Paste the copied content into the new spreadsheet.<br>
 4) Change the number format to text for Excel.<br>
 5) Save the file as 'input_file.csv' into your 'authentic_files' folder with the CSV UTF-8 format and comma as the separator.<br>
+6) (Info) : For PRORATA month pay attention to respect following convention = (PRORATA --> 21/01) or (PRORATA 21/01 -->)
 
 # Enjoy and feel free to buy me a coffee
 <a href="https://www.buymeacoffee.com/mnicolle" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
