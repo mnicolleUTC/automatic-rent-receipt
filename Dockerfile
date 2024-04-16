@@ -1,4 +1,4 @@
-# Build docker 
+# Build docker
 # docker build --no-cache -t mnicolle/rent_receipt .
 # Run docker for debug (-it)
 # docker run -it -v "$(pwd):/data" mnicolle/rent_receipt
@@ -31,7 +31,7 @@ COPY french /data/french
 RUN cp french/french.ldf french/francais.ldf french/acadian.ldf french/canadien.ldf french/frenchb.lua french/frenchb.ldf /usr/local/texlive/2017/texmf-dist/tex/generic/babel-french
 RUN mktexlsr
 
-# Install requirements package for python 
+# Install requirements package for python
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 

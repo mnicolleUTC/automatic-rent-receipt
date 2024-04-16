@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copy either authentic folder content or example folder content based on 
+# Copy either authentic folder content or example folder content based on
 # the existence of one folder
 
 mkdir used_files

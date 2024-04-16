@@ -1,0 +1,38 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py3-plus]
+-   repo: https://github.com/econchick/interrogate
+    rev: 1.7.0  # or master if you're bold
+    hooks:
+    -   id: interrogate
+        args: [-i, --ignore-init-method,--fail-under=0] #-v or -vv for verbose
+        verbose: true
+-   repo: https://github.com/ambv/black
+    rev: 24.4.0
+    hooks:
+    -   id: black
+        args: [--line-length=79]
+-   repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+    -   id: flake8
+        args: [--ignore=E203]
+  # monitor code’s complexity
+-   repo: https://github.com/rubik/xenon
+    rev: v0.9.1
+    hooks:
+      - id: xenon
+        args: [ --max-absolute B, --max-modules A, --max-average A ]
