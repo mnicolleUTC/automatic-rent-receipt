@@ -1,0 +1,15 @@
+# Full documentation = https://jorisroovers.com/gitlint/latest/configuration/
+[general]
+# Ignore rules, reference them by id or name (comma-separated)
+# ignore=B6
+# Set the extra-path where gitlint will search for user defined rules
+extra-path=./gitlint_rules/gitlint_emoji.py
+
+[title-max-length]
+line-length=72
+
+[title-min-length]
+min-length=5
+
+[body-max-line-length]
+line-length=300
