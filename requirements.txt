@@ -1,3 +1,5 @@
+certifi==2024.2.2
+charset-normalizer==3.3.2
 data==0.4
 dateparser==1.1.7
 DateTime==5.0
@@ -5,6 +7,7 @@ decorator==5.1.1
 docopt==0.6.2
 funcsigs==1.0.2
 future==0.18.3
+idna==3.7
 Jinja2==3.1.2
 latex==0.7.0
 MarkupSafe==2.1.2
@@ -16,9 +19,11 @@ pytz==2022.7.1
 pytz-deprecation-shim==0.1.0.post0
 PyYAML==6.0
 regex==2022.10.31
+requests==2.31.0
 shutilwhich==1.1.0
 six==1.16.0
 tempdir==0.7.1
 tzdata==2022.7
 tzlocal==4.2
+urllib3==2.2.1
 zope.interface==5.5.2
